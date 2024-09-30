@@ -1,9 +1,32 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.WalletApp" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.WalletApp" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
     <style name="Theme.WalletApp" parent="Base.Theme.WalletApp" />
+
+    <style name="ButtonOperation" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">18dp</item>
+    </style>
+
+    <style name="TextViewTitle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewInfo">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextViewListTitle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewListInfo">
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

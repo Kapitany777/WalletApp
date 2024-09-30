@@ -5,32 +5,33 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(Wallet::class), version = 1)
+@Database(entities = [Wallet::class], version = 1)
 abstract class WalletDatabase : RoomDatabase()
 {
     abstract fun walletDao(): WalletDao
 
     companion object
     {
-        private var INSTANCE: WalletDatabase? = null
+        private var instance: WalletDatabase? = null
 
         fun getInstance(context: Context): WalletDatabase
         {
-            if (INSTANCE == null)
+            if (instance == null)
             {
-                INSTANCE = Room.databaseBuilder(
+                instance = Room.databaseBuilder(
                     context.applicationContext,
-                    WalletDatabase::class.java, "wallet.db"
+                    WalletDatabase::class.java,
+                    "wallet.db"
                 )
-                    .fallbackToDestructiveMigration()
                     .build()
             }
-            return INSTANCE!!
+
+            return instance!!
         }
 
         fun destroyInstance()
         {
-            INSTANCE = null
+            instance = null
         }
     }
 }
